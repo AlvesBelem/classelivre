@@ -1,5 +1,19 @@
 {
-  "node": {},
+  "node": {
+    "002ff9d8532bb8eec8dd9a17a551ab371346ed43cf": {
+      "workers": {
+        "app/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CPC%5C%5CDocuments%5C%5Cprojetos%5C%5Cclasselivre%5C%5Cclasselivre%5C%5Csrc%5C%5Capp%5C%5Cpage.tsx%22%2C%5B%7B%22id%22%3A%22002ff9d8532bb8eec8dd9a17a551ab371346ed43cf%22%2C%22exportedName%22%3A%22%24%24RSC_SERVER_ACTION_0%22%2C%22filename%22%3A%22..%2FC%3A%5C%5CUsers%5C%5CPC%5C%5CDocuments%5C%5Cprojetos%5C%5Cclasselivre%5C%5Cclasselivre%5C%5Csrc%5C%5Capp%5C%5Cpage.tsx%22%7D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/page": "rsc"
+      },
+      "filename": "../C:\\Users\\PC\\Documents\\projetos\\classelivre\\classelivre\\src\\app\\page.tsx",
+      "exportedName": "$$RSC_SERVER_ACTION_0"
+    }
+  },
   "edge": {},
   "encryptionKey": "4fb+EYpN+ZR0mQR1gGP6P9PYcB2WEVu80yJ3fNma1Bc="
 }
