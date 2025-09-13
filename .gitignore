@@ -12,6 +12,7 @@
 .output/
 #Extension App-file
 *.app
+*.env
 #Rapid Application Development File
 rad.json
 #Translation Base-file
@@ -20,3 +21,4 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+node_modules
