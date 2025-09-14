@@ -1,30 +1,34 @@
 # dependencies
-/src/generated/prisma
 /node_modules
 /.pnp
 .pnp.js
-
-# build traces
+# Build e cache do Next.js
+.next/
 trace
+# build output
+/.next
+/out
+/build
+.vercel
 
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
-/.vercel
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# env files
+# environment variables
 .env
 .env*.local
+*.pem
+
+# prisma
+/prisma/dev.db
+/prisma/dev.db-journal
+
+# generated prisma types
+/src/generated/prisma
+
+# system files
+.DS_Store
+trace
 
 # logs
 npm-debug.log*
@@ -32,7 +36,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# editor
+# IDE configs
 .vscode/*
 !.vscode/extensions.json
 .idea/
@@ -41,7 +45,3 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
-
-# prisma
-/prisma/dev.db
-/prisma/dev.db-journal
