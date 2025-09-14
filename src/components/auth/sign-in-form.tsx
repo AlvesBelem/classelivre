@@ -32,6 +32,10 @@ export function SignInForm() {
     }
   }
 
+  async function handleGoogleLogin() {
+    await signIn("google", { callbackUrl: "/dashboard" })
+  }
+
   return (
     <div className="space-y-6 mt-4">
       {/* Formulário de login */}
@@ -62,7 +66,7 @@ export function SignInForm() {
       <div className="text-right">
         <Link
           href="/recuperar-senha"
-          className="flex items-center justify-center text-sm text-muted-foreground hover:text-primary transition-colors"
+          className="text-sm text-muted-foreground hover:text-primary transition-colors"
         >
           Esqueceu sua senha?
         </Link>
@@ -78,15 +82,14 @@ export function SignInForm() {
 
       {/* Botão Google */}
       <Button
+        type="button"
         variant="outline"
         className="w-full flex items-center justify-center gap-2 text-primary hover:text-primary"
-        onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+        onClick={handleGoogleLogin}
       >
         <LogIn className="w-5 h-5 text-primary" />
         Entrar com Google
       </Button>
-
-
     </div>
   )
 }

@@ -1,10 +1,19 @@
 import { getPageMetadata } from "@/lib/metadata"
 import { FeatureCardHorizontal } from "@/components/FeatureCardHorizontal"
 import { Calendar, Users, DollarSign, Settings } from "lucide-react"
-
+import { auth } from "@/lib/auth"
+import { redirect } from "next/navigation"
 export const metadata = getPageMetadata("Dashboard")
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
+  const session = await auth();
+
+  if (!session?.user) {
+    redirect("/")
+  }
+
+
+
   return (
     <div className="grid gap-6 md:grid-cols-2">
       <FeatureCardHorizontal

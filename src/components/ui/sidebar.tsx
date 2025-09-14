@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Calendar, Users, DollarSign, Settings, Menu, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import Link from "next/link"
 
 interface SidebarProps {
   activePath?: string
@@ -39,14 +40,25 @@ export function Sidebar({ activePath }: SidebarProps) {
       >
         {/* Header com toggle */}
         <div className="flex items-center justify-between px-4 py-4 border-b">
-          {open && <span className="font-bold text-primary">ClasseLivre</span>}
+          {open && (
+            <Link
+              href="/dashboard"
+              className="font-bold text-primary hover:underline transition-colors"
+            >
+              ClasseLivre
+            </Link>
+          )}
           <Button
             variant="ghost"
             size="icon"
             className="ml-auto"
             onClick={() => setOpen(!open)}
           >
-            {open ? <ChevronLeft className="h-5 w-5" /> : <ChevronRight className="h-5 w-5" />}
+            {open ? (
+              <ChevronLeft className="h-5 w-5" />
+            ) : (
+              <ChevronRight className="h-5 w-5" />
+            )}
           </Button>
         </div>
 

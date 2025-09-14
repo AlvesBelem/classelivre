@@ -1,8 +1,15 @@
 import { getPageMetadata } from "@/lib/metadata"
+import { auth } from "@/lib/auth"
+import { redirect } from "next/navigation"
 
 export const metadata = getPageMetadata("Aulas")
 
-export default function AulasPage() {
+export default async function AulasPage() {
+  const session = await auth();
+
+  if (!session?.user) {
+    redirect("/")
+  }
   return (
     <div>
       <p className="text-muted-foreground">
