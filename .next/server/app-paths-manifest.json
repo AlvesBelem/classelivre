@@ -1,10 +1,11 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js",
+  "/login/page": "app/login/page.js",
+  "/recuperar-senha/page": "app/recuperar-senha/page.js",
   "/dashboard/page": "app/dashboard/page.js",
   "/dashboard/aulas/page": "app/dashboard/aulas/page.js",
-  "/dashboard/config/page": "app/dashboard/config/page.js",
+  "/dashboard/alunos/page": "app/dashboard/alunos/page.js",
   "/dashboard/financeiro/page": "app/dashboard/financeiro/page.js",
-  "/dashboard/alunos/page": "app/dashboard/alunos/page.js"
+  "/dashboard/config/page": "app/dashboard/config/page.js"
 }
