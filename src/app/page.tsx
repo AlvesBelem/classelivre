@@ -1,102 +1,89 @@
-import Image from "next/image";
+import { FeatureCard } from "@/components/FeatureCard";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, BookOpen, Users, Shield } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-background to-muted">
+      {/* Header */}
+      <header className="container mx-auto py-6 px-4 flex justify-between items-center">
+        <div className="flex items-center text-primary font-bold text-xl">
+          <BookOpen className="h-6 w-6 mr-2 text-secondary" />
+          <span>ClasseLivre</span>
+        </div>
+        <nav className="hidden md:flex gap-6 text-sm font-medium text-muted-foreground">
+          <a href="#" className="hover:text-primary transition-colors">Recursos</a>
+          <a href="#" className="hover:text-primary transition-colors">Planos</a>
+          <a href="#" className="hover:text-primary transition-colors">Contato</a>
+        </nav>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+      {/* Hero Section */}
+      <main className="flex-1 flex items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-secondary/10 to-transparent blur-3xl opacity-40" />
+
+        <div className="relative z-10 container mx-auto px-4 py-12 md:py-24">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <div className="inline-block bg-secondary/10 text-secondary px-4 py-1.5 rounded-full text-sm font-medium mb-4">
+              Plataforma para professores particulares
+            </div>
+
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+              Organize suas aulas e alunos em um só lugar
+            </h1>
+
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+              Gerencie horários, alunos, pagamentos e materiais de forma simples e prática, com uma plataforma feita sob medida para professores particulares.
+            </p>
+
+            <div className="pt-6 flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-secondary text-primary-foreground font-semibold px-8 h-12 shadow-lg transition-all group"
+              >
+                Começar agora
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="px-8 h-12"
+              >
+                Ver planos
+              </Button>
+            </div>
+          </div>
+
+          {/* Features */}
+          <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <FeatureCard
+              icon={<Users className="h-10 w-10 text-primary group-hover:scale-110 transition-transform" />}
+              title="Gestão de alunos"
+              description="Cadastre e acompanhe seus alunos, com histórico de aulas e progresso individual."
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <FeatureCard
+              icon={<BookOpen className="h-10 w-10 text-secondary group-hover:scale-110 transition-transform" />}
+              title="Aulas organizadas"
+              description="Controle sua agenda, materiais de estudo e facilite o acesso dos alunos."
+            />
+            <FeatureCard
+              icon={<Shield className="h-10 w-10 text-primary group-hover:scale-110 transition-transform" />}
+              title="Financeiro seguro"
+              description="Controle mensalidades e pagamentos extras com total segurança."
+            />
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Footer */}
+      <footer className="border-t mt-16">
+        <div className="container mx-auto py-6 px-4 flex flex-col md:flex-row items-center justify-between text-sm text-muted-foreground">
+          <p>© {new Date().getFullYear()} ClasseLivre. Todos os direitos reservados.</p>
+          <div className="flex gap-6 mt-4 md:mt-0">
+            <a href="#" className="hover:text-primary">Política de Privacidade</a>
+            <a href="#" className="hover:text-primary">Termos de Uso</a>
+          </div>
+        </div>
       </footer>
     </div>
   );
