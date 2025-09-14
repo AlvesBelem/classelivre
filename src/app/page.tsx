@@ -32,10 +32,10 @@ export default function Home() {
         <div className="relative z-10 container mx-auto px-4 py-12 md:py-24">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="inline-block bg-secondary/10 text-secondary px-4 py-1.5 rounded-full text-sm font-medium mb-4">
-              Plataforma para professores particulares
+              Plataforma Exclusiva para professores particulares
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-10 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
               Organize suas aulas e alunos em um só lugar
             </h1>
 
@@ -55,7 +55,11 @@ export default function Home() {
                 </Button>
               </Link>
 
-              <Button variant="outline" size="lg" className="px-8 h-12">
+              <Button
+                variant="outline"
+                size="lg"
+                className="px-8 h-12 text-primary border-primary transition-colors hover:bg-primary hover:text-white"
+              >
                 Ver planos
               </Button>
             </div>
