@@ -1,6 +1,7 @@
-import { FeatureCard } from "@/components/FeatureCard";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, BookOpen, Users, Shield } from "lucide-react";
+import Link from "next/link"
+import { FeatureCard } from "@/components/FeatureCard"
+import { Button } from "@/components/ui/button"
+import { ArrowRight, BookOpen, Users, Shield } from "lucide-react"
 
 export default function Home() {
   return (
@@ -12,9 +13,15 @@ export default function Home() {
           <span>ClasseLivre</span>
         </div>
         <nav className="hidden md:flex gap-6 text-sm font-medium text-muted-foreground">
-          <a href="#" className="hover:text-primary transition-colors">Recursos</a>
-          <a href="#" className="hover:text-primary transition-colors">Planos</a>
-          <a href="#" className="hover:text-primary transition-colors">Contato</a>
+          <a href="#" className="hover:text-primary transition-colors">
+            Recursos
+          </a>
+          <a href="#" className="hover:text-primary transition-colors">
+            Planos
+          </a>
+          <a href="#" className="hover:text-primary transition-colors">
+            Contato
+          </a>
         </nav>
       </header>
 
@@ -37,18 +44,18 @@ export default function Home() {
             </p>
 
             <div className="pt-6 flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-secondary text-primary-foreground font-semibold px-8 h-12 shadow-lg transition-all group"
-              >
-                Começar agora
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="px-8 h-12"
-              >
+              {/* 🔹 Botão leva para /login */}
+              <Link href="/login">
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-secondary text-primary-foreground font-semibold px-8 h-12 shadow-lg transition-all group"
+                >
+                  Começar agora
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+
+              <Button variant="outline" size="lg" className="px-8 h-12">
                 Ver planos
               </Button>
             </div>
@@ -57,17 +64,23 @@ export default function Home() {
           {/* Features */}
           <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
             <FeatureCard
-              icon={<Users className="h-10 w-10 text-primary group-hover:scale-110 transition-transform" />}
+              icon={
+                <Users className="h-10 w-10 text-primary group-hover:scale-110 transition-transform" />
+              }
               title="Gestão de alunos"
               description="Cadastre e acompanhe seus alunos, com histórico de aulas e progresso individual."
             />
             <FeatureCard
-              icon={<BookOpen className="h-10 w-10 text-secondary group-hover:scale-110 transition-transform" />}
+              icon={
+                <BookOpen className="h-10 w-10 text-secondary group-hover:scale-110 transition-transform" />
+              }
               title="Aulas organizadas"
               description="Controle sua agenda, materiais de estudo e facilite o acesso dos alunos."
             />
             <FeatureCard
-              icon={<Shield className="h-10 w-10 text-primary group-hover:scale-110 transition-transform" />}
+              icon={
+                <Shield className="h-10 w-10 text-primary group-hover:scale-110 transition-transform" />
+              }
               title="Financeiro seguro"
               description="Controle mensalidades e pagamentos extras com total segurança."
             />
@@ -80,11 +93,15 @@ export default function Home() {
         <div className="container mx-auto py-6 px-4 flex flex-col md:flex-row items-center justify-between text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} ClasseLivre. Todos os direitos reservados.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-primary">Política de Privacidade</a>
-            <a href="#" className="hover:text-primary">Termos de Uso</a>
+            <a href="#" className="hover:text-primary">
+              Política de Privacidade
+            </a>
+            <a href="#" className="hover:text-primary">
+              Termos de Uso
+            </a>
           </div>
         </div>
       </footer>
     </div>
-  );
+  )
 }
