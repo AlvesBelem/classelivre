@@ -1,72 +1,90 @@
 import { FeatureCard } from "@/components/FeatureCard";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, HandCoins, Heart, Shield, Zap } from "lucide-react";
-
+import { ArrowRight, BookOpen, Users, Shield } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-b from-white to-gray-50">
-      <header className="container mx-auto py-6 px-4">
-        <div className="flex items-center">
-          <div className="flex items-center text-amber-500 font-bold text-xl">
-            <HandCoins className="h-6 w-6 mr-2" />
-            <span>ApoiaDev</span>
-          </div>
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-background to-muted">
+      {/* Header */}
+      <header className="container mx-auto py-6 px-4 flex justify-between items-center">
+        <div className="flex items-center text-primary font-bold text-xl">
+          <BookOpen className="h-6 w-6 mr-2 text-secondary" />
+          <span>ClasseLivre</span>
         </div>
+        <nav className="hidden md:flex gap-6 text-sm font-medium text-muted-foreground">
+          <a href="#" className="hover:text-primary transition-colors">Recursos</a>
+          <a href="#" className="hover:text-primary transition-colors">Planos</a>
+          <a href="#" className="hover:text-primary transition-colors">Contato</a>
+        </nav>
       </header>
 
-      <main className="flex-1 flex items-center justify-center">
-        <div className="container mx-auto px-4 py-12 md:py-24">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center space-y-6">
-              <div className="inline-block bg-amber-100 text-amber-800 px-4 py-1.5 rounded-full text-sm font-medium mb-2">
-                Plataforma para criadores de conteúdo
-              </div>
+      {/* Hero Section */}
+      <main className="flex-1 flex items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-secondary/10 to-transparent blur-3xl opacity-40" />
 
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-400">
-                Monetize seu público de forma descomplicada
-              </h1>
-
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Receba doações diretamente dos seus seguidores através de uma página personalizada e elegante, sem
-                complicações.
-              </p>
-
-              <div className="pt-4">
-                <form>
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="bg-amber-500 hover:bg-amber-600 text-white font-medium px-8 h-12"
-                  >
-                    Começar agora
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </form>
-              </div>
+        <div className="relative z-10 container mx-auto px-4 py-12 md:py-24">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <div className="inline-block bg-secondary/10 text-secondary px-4 py-1.5 rounded-full text-sm font-medium mb-4">
+              Plataforma para professores particulares
             </div>
 
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+              Organize suas aulas e alunos em um só lugar
+            </h1>
+
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+              Gerencie horários, alunos, pagamentos e materiais de forma simples e prática, com uma plataforma feita sob medida para professores particulares.
+            </p>
+
+            <div className="pt-6 flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-secondary text-primary-foreground font-semibold px-8 h-12 shadow-lg transition-all group"
+              >
+                Começar agora
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="px-8 h-12"
+              >
+                Ver planos
+              </Button>
+            </div>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Features */}
+          <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
             <FeatureCard
-              icon={<Zap className="h-8 w-8 text-amber-600" />}
-              title="Rápido e simples"
-              description="Configure sua página em minutos e comece a receber doações imediatamente."
+              icon={<Users className="h-10 w-10 text-primary group-hover:scale-110 transition-transform" />}
+              title="Gestão de alunos"
+              description="Cadastre e acompanhe seus alunos, com histórico de aulas e progresso individual."
             />
             <FeatureCard
-              icon={<Heart className="h-8 w-8 text-amber-600" />}
-              title="Conexão direta"
-              description="Crie uma conexão mais próxima com seus apoiadores através de mensagens personalizadas."
+              icon={<BookOpen className="h-10 w-10 text-secondary group-hover:scale-110 transition-transform" />}
+              title="Aulas organizadas"
+              description="Controle sua agenda, materiais de estudo e facilite o acesso dos alunos."
             />
             <FeatureCard
-              icon={<Shield className="h-8 w-8 text-amber-600" />}
-              title="Pagamentos seguros"
-              description="Transações protegidas e transferências automáticas para sua conta bancária."
+              icon={<Shield className="h-10 w-10 text-primary group-hover:scale-110 transition-transform" />}
+              title="Financeiro seguro"
+              description="Controle mensalidades e pagamentos extras com total segurança."
             />
           </div>
         </div>
       </main>
+
+      {/* Footer */}
+      <footer className="border-t mt-16">
+        <div className="container mx-auto py-6 px-4 flex flex-col md:flex-row items-center justify-between text-sm text-muted-foreground">
+          <p>© {new Date().getFullYear()} ClasseLivre. Todos os direitos reservados.</p>
+          <div className="flex gap-6 mt-4 md:mt-0">
+            <a href="#" className="hover:text-primary">Política de Privacidade</a>
+            <a href="#" className="hover:text-primary">Termos de Uso</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
