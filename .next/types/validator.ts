@@ -36,6 +36,42 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
 }
 
 
+// Validate ../../src/app/dashboard/alunos/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/dashboard/alunos">> = Specific
+  const handler = {} as typeof import("../../src/app/dashboard/alunos/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/dashboard/aulas/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/dashboard/aulas">> = Specific
+  const handler = {} as typeof import("../../src/app/dashboard/aulas/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/dashboard/config/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/dashboard/config">> = Specific
+  const handler = {} as typeof import("../../src/app/dashboard/config/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/dashboard/financeiro/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/dashboard/financeiro">> = Specific
+  const handler = {} as typeof import("../../src/app/dashboard/financeiro/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/dashboard/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/dashboard">> = Specific
@@ -59,6 +95,15 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
 
 
 
+
+// Validate ../../src/app/dashboard/layout.tsx
+{
+  type __IsExpected<Specific extends LayoutConfig<"/dashboard">> = Specific
+  const handler = {} as typeof import("../../src/app/dashboard/layout.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
 
 // Validate ../../src/app/layout.tsx
 {

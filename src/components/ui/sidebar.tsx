@@ -10,8 +10,8 @@ interface SidebarProps {
 }
 
 export function Sidebar({ activePath }: SidebarProps) {
-  const [open, setOpen] = useState(true) // controla colapso no desktop
-  const [mobileOpen, setMobileOpen] = useState(false) // controla drawer no mobile
+  const [open, setOpen] = useState(true) // colapsar no desktop
+  const [mobileOpen, setMobileOpen] = useState(false) // drawer no mobile
 
   const navItems = [
     { label: "Aulas", icon: Calendar, href: "/dashboard/aulas" },
